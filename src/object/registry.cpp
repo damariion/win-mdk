@@ -26,13 +26,13 @@ VOID registry::set(LPCSTR sub, mdk::buffer* data)
 buffer registry::get(LPCSTR sub, LPCSTR value)
 {
 	DWORD size = NULL;
-	if (mdk::nt().advapi32.call<LSTATUS>("RegGetValueA", this->handle, 
-		sub, value, RRF_RT_ANY, NULL, NULL, &size) != ERROR_SUCCESS)
+	if (RegGetValueA(this->handle, sub, value, 
+		RRF_RT_ANY, NULL, NULL, &size) != ERROR_SUCCESS)
 	{ throw std::exception(); }
 
 	auto buf = buffer(size);
-	if (mdk::nt().advapi32.call<LSTATUS>("RegGetValueA", this->handle, 
-		sub, value, RRF_RT_ANY, NULL, buf.handle, &size) != ERROR_SUCCESS)
+	if (RegGetValueA(this->handle,sub, value, 
+		RRF_RT_ANY, NULL, buf.handle, &size) != ERROR_SUCCESS)
 	{ throw std::exception(); }
 
 	return buf;

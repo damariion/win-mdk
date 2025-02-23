@@ -154,6 +154,7 @@
     <ClCompile Include="src\object\thread.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".gitignore" />
     <None Include="build\var\entry.obj.enc" />
     <None Include="build\var\vc143.idb" />
     <None Include="build\var\vc143.pdb" />
@@ -170,6 +171,7 @@
     <None Include="build\var\win-mdk.tlog\win-mdk.lastbuildstate" />
     <None Include="build\win-mdk.exe" />
     <None Include="build\win-mdk.pdb" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Object Include="build\var\entry.obj" />

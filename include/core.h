@@ -38,7 +38,7 @@ namespace mdk
 			if (this->handle == NULL)
 				return NULL;
 
-			auto dll = (PBYTE)handle;
+			auto dll = (PBYTE)this->handle;
 
 			auto dos = (PIMAGE_DOS_HEADER)dll;
 			auto nte = (PIMAGE_NT_HEADERS)(dll + dos->e_lfanew);
@@ -61,18 +61,7 @@ namespace mdk
 		template <typename T, typename... A>
 		T call(string function, A... args)
 		{
-			// re-attempts
-			INT failures = 5;
-
-			try
-			{
-				return (*(T(*)(A...)) this->find(function))(args...);
-			}
-			catch (...)
-			{
-				if (failures-- <= 0) 
-					throw std::exception("Couldn't access library function");
-			}
+			return ((T(*)(A...))this->find(function))(args...);
 		}
 	};
 

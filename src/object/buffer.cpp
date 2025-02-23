@@ -8,8 +8,9 @@ buffer::buffer(SIZE_T size): buffer(NULL, size){}
 // entire (full)
 buffer::buffer(HANDLE handle, SIZE_T size)
 {
-	if (!(this->file = mdk::nt().kernel32.call<HANDLE>("CreateFileMappingA",
-		INVALID_HANDLE_VALUE, NULL, PAGE_EXECUTE_READWRITE, NULL, (this->size = size), NULL)))
+
+	if (!(this->file = CreateFileMappingA(INVALID_HANDLE_VALUE, NULL,
+		PAGE_EXECUTE_READWRITE, NULL, (this->size = size), NULL)))
 	{ throw std::exception(); }
 
 	if (!(this->handle = mdk::nt().kernel32.call<HANDLE>("MapViewOfFile",
