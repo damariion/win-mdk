@@ -17,8 +17,6 @@ Ensure you have the required dependencies set up before using MDK.
 
 Link against the necessary libraries when compiling your project.
 
----
-
 ## Features & Usage
 
 ### 1. Process Management
@@ -42,8 +40,6 @@ for (mdk::thread thread : process.threads())
     thread.tid;
 }
 ```
-
----
 
 ### 2. DLL Injection and API Calls
 MDK supports DLL injection and dynamic function resolution.
@@ -77,8 +73,6 @@ dll.name;
 dll.size;
 ```
 
----
-
 ### 3. Memory Buffers
 MDK provides various buffer management functionalities.
 
@@ -101,8 +95,6 @@ buf.size;
 buf.execute();
 ```
 
----
-
 ### 4. Encryption and Hashing
 MDK allows encrypting buffers using built-in algorithms.
 
@@ -114,8 +106,6 @@ auto algorithm = mdk::hash::xor_(32);
 // Encrypt the buffer in memory
 buf.encrypt(&algorithm);
 ```
-
----
 
 ### 5. Internet Payload Downloading
 MDK enables downloading and executing payloads directly in memory.
@@ -134,8 +124,6 @@ buffer.execute();
 // Internet attributes
 internet.handle;
 ```
-
----
 
 ### 6. Registry Manipulation
 MDK enables reading and writing to the Windows registry.
@@ -156,8 +144,6 @@ registry.set("ExampleKey", &buffer);
 mdk::buffer result = registry.get("Desktop", "Wallpaper");
 ```
 
----
-
 ### 7. Static Library Access
 MDK statically defines commonly used libraries for minimal memory overhead.
 
@@ -172,13 +158,6 @@ mdk::nt().advapi32;
 auto version = mdk::nt().kernel32.call<DWORD>("GetProcessVersion", 0);
 ```
 
----
-
 ## Disclaimer
 This framework is provided for educational and research purposes **only**. Unauthorized usage for malicious intent is strictly prohibited.
-
----
-
-## Contact
-For more information, visit: [github.com/damariion](https://github.com/damariion)
 
