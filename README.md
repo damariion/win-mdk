@@ -1,6 +1,5 @@
 # Windows Malware Development Kit (MDK) - Usage Guide
 
-## Overview
 The **Windows Malware Development Kit (MDK)** provides a framework for interacting with Windows processes, memory, hashing, and the Windows registry. This guide covers the core functionality of the framework with practical examples.
 
 ### API Evasion
