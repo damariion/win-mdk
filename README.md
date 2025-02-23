@@ -5,8 +5,6 @@ The **Windows Malware Development Kit (MDK)** provides a framework for interacti
 ### API Evasion
 MDK directly resolves API calls instead of linking them at compile-time, preventing them from appearing in the Import Address Table (IAT). This allows for stealthier execution by dynamically locating and invoking functions at runtime.
 
----
-
 ## Installation
 Ensure you have the required dependencies set up before using MDK.
 
