@@ -2,16 +2,20 @@
 using namespace mdk::hash;
 
 xor_::xor_(): xor_::xor_(NULL) {};
-xor_::xor_(CHAR key)
+xor_::xor_(INT64 key)
 {
 	this->key = key;
-	if (!key) this->key = this->keygen();
+	if (!key) 
+		this->key = this->keygen();
 }
 
-CHAR xor_::keygen()
+INT64 xor_::keygen()
 {
 	srand(time(0));
-	return rand() % 256;
+	int   min = 1.0e8;
+	INT64 max = INT16_MAX;
+
+	return rand() % (max - min + 1) + min;
 }
 
 VOID xor_::apply(PVOID data, SIZE_T size)

@@ -45,6 +45,9 @@
     <ClInclude Include="include\payload\messagebox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\hash\rc4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\entry.cpp">
@@ -68,6 +71,9 @@
     <ClCompile Include="src\object\internet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\hash\rc4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="build\var\win-mdk.tlog\CL.command.1.tlog" />
@@ -86,6 +92,8 @@
     <None Include="build\var\win-mdk.ilk" />
     <None Include="build\win-mdk.exe" />
     <None Include="build\win-mdk.pdb" />
+    <None Include=".gitignore" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Object Include="build\var\entry.obj" />

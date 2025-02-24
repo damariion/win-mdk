@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClInclude Include="include\core.h" />
     <ClInclude Include="include\hash\hasher.h" />
+    <ClInclude Include="include\hash\rc4.h" />
     <ClInclude Include="include\hash\xor.h" />
     <ClInclude Include="include\object\buffer.h" />
     <ClInclude Include="src\mdk.h" />
@@ -145,6 +146,7 @@
     <ClInclude Include="include\payload\messagebox.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\hash\rc4.cpp" />
     <ClCompile Include="src\object\internet.cpp" />
     <ClCompile Include="src\entry.cpp" />
     <ClCompile Include="src\hash\xor.cpp" />

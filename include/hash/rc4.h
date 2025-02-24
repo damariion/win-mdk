@@ -1,20 +1,20 @@
 #pragma once
-
 #include "../core.h"
 #include "hasher.h"
 
 namespace mdk::hash
 {
-	class xor_: public hasher
+	class rc4: public hasher
 	{
 	public:
 
-		INT64 key;
-	
-		xor_();
-		xor_(INT64);
-	
+		PCHAR  key;
+		SIZE_T len;
+
+		rc4();
+		rc4(PCHAR, SIZE_T);
+
 		virtual VOID apply(PVOID, SIZE_T) override;
-		static INT64 keygen();
+		static VOID keygen(PCHAR, SIZE_T);
 	};
 }

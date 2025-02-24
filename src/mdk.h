@@ -10,3 +10,4 @@
 #include "../include/payload/messagebox.h"
 
 #include "../include/hash/xor.h"
+#include "../include/hash/rc4.h"
